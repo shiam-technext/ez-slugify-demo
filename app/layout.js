@@ -1,5 +1,6 @@
 import { Lato } from "next/font/google";
 import localFont from "next/font/local";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lato.variable} antialiased`}
       >
+        <Toaster position="top-center" />
         {children}
       </body>
     </html>

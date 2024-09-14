@@ -3,6 +3,7 @@
 import { DocumentDuplicateIcon } from "@heroicons/react/24/solid";
 import slugify from "ez-slugify";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const SlugGenerator = () => {
   const [textValue, setTextValue] = useState("");
@@ -13,6 +14,11 @@ const SlugGenerator = () => {
     }
 
     return slugify(textValue);
+  };
+
+  const handleCopySlug = () => {
+    navigator.clipboard.writeText(slugify(textValue));
+    toast.success("Slug Copied to the Clip-Board.");
   };
 
   return (
@@ -46,7 +52,10 @@ const SlugGenerator = () => {
           {handleSlugify()}
         </p>
 
-        <button className="w-full md:w-auto px-6 py-3 bg-black hover:bg-opacity-85 border-black text-white fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all disabled:opacity-70">
+        <button
+          onClick={handleCopySlug}
+          className="w-full md:w-auto px-6 py-3 bg-black hover:bg-opacity-85 border-black text-white fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all disabled:opacity-70"
+        >
           <span>
             <DocumentDuplicateIcon className="h-5 w-5" />
           </span>
