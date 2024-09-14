@@ -4,6 +4,10 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen flex flex-col justify-center items-center">
+        <h1 className="mb-8 font-lato text-4xl font-bold text-center">
+          Convert Your String to a SEO-Friendly Slug
+        </h1>
+
         <label
           className="mx-auto relative bg-white min-w-sm md:w-1/2 max-w-7xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-2xl focus-within:border-gray-300"
           for="search-bar"
